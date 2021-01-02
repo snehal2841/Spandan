@@ -113,18 +113,6 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
-<<<<<<< HEAD
-app.get("/covid",(req,res)=>{
-    res.render("covid");
-});
-
-=======
-<<<<<<< HEAD
->>>>>>> adf3a58ee1c5fea568feb7a58987c8b973266909
-app.get("/login", (req, res) => {
-    res.render("login");
-});
-=======
 app.get("/covid",(req,res)=>{
     res.render("covid");
 });
@@ -132,10 +120,6 @@ app.get("/covid",(req,res)=>{
 app.get("/login", (req, res) => {
     res.render("login");
 });
-// app.get("/login", (req, res) => {
-//     res.render("login");
-// });
->>>>>>> 46aea9e753b4e7e6f837842c9636878f37963303
 
 app.post("/login", (req, res)=>{
     res.send("you hit the post route");
@@ -202,9 +186,9 @@ app.get("/prescription",(req,res)=>{
  });
  
  // NEW - show form to create new user
- /*app.get("/user/new",(req,res)=>{
+ app.get("/user/new",(req,res)=>{
      res.render("register");
- });*/
+ });
  
  // SHOW - shows more info about one user
  app.get("/user/:id", (req, res)=>{
@@ -370,6 +354,6 @@ app.post("/user/:id/prescription", (req, res)=>{
 
  
 let port = process.env.PORT || 3000
-app.listen(port, ()=>{
-    console.log("Listening to port 3000.");
+app.listen(port, process.env.IP, function(){
+    console.log("started!");
 });
